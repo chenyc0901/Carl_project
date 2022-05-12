@@ -24,7 +24,7 @@ medianpercent <- function(x){return(median(x)*100)}
 text <- vp %>% apply(.,2,medianpercent) %>% as.data.frame() %>% rownames_to_column("id")
 colnames(text) <-c("id" ,"value")
 
-#draw plot
+#draw a plot
 plotVarPart(vp)+
   geom_text(data=text,aes(y=50,label=(paste0(round(value,digit=2),"%")),x=id),color='blue')
 
