@@ -3,7 +3,6 @@ library(tidyverse)
 library(variancePartition)
 rm(list=ls())
 #load file
-lib_mtx <- read.csv("rawdata/library_info.csv", row.names = 1)
 info <- read.csv("rawdata/info.csv",row.names=1,check.names=FALSE)
 gene_mtx <- read.csv("rawdata/gene_count_matrix.csv", row.names = 1, check.names=FALSE)
 gene_mtx <- gene_mtx[,rownames(lib_mtx)]
