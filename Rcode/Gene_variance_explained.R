@@ -7,7 +7,7 @@ rm(list=ls())
   gene_count <- read_csv("rawdata/Gene_count.csv")
  
 #merge data (matrix without identical id and all zero values)
-#merged with information data and filter out all zero values
+#merged with information data and filter out all zero values (gene counts = #19201)
   gene_selected <-left_join(gene_info,gene_count,by="id") %>% 
                   as_tibble() %>% 
                   rowwise() %>% 
@@ -27,4 +27,5 @@ rm(list=ls())
   par(mfrow=c(1,2))
   cqnplot(cqn_subset, n = 1,xlab="Length")
   cqnplot(cqn_subset, n = 2,xlab="GC Content")
+
   
